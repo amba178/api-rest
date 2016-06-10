@@ -1,0 +1,17 @@
+= render 'shared/error_messages', object: f.object 
+.form-group
+  = f.label :name, class: "col-sm-2 col-sm-offset-2 control-label text-right"
+  = f.text_field :name, class: "form-control"
+.form-group 
+  = f.label :price, class: "col-sm-2 col-sm-offset-2 control-label text-right"
+  = f.text_field :price, class: "form-control"
+.form-group
+  = f.label :category_id, "Category", class: "col-sm-2 col-sm-offset-2 control-label text-right text-right"
+  = f.collection_select :category_id, Category.all, :id, :name, {prompt: true}, {class: "form-control" }
+.form-group
+  = f.label :released_on, "Released Date", class: "col-sm-2 col-sm-offset-2 control-label text-right"
+  %span
+    = f.date_select :released_on, {order: [:month, :day, :year], :start_year => 1955, :end_year => 2015}, {class: "form-control"}
+.button-group
+  = f.submit class: "btn btn-primary  btn-smcol-sm-2 col-sm-offset-6"
+  %br

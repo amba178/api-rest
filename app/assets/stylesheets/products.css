@@ -1,0 +1,9 @@
+
+.form-control {
+  width: 40%;
+}
+
+span .form-control{
+  width: 10%;
+  display: inline;
+}

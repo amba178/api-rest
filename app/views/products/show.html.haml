@@ -1,0 +1,16 @@
+%h1{class: "page-header"}= @product.name 
+
+%p
+	%b Price:
+	= number_to_currency @product.price 
+%p
+	%b Released on:
+	= @product.released_on.strftime("%B %e, %Y")
+%p
+	%b Category:
+	= @product.category.name 
+=link_to 'Edit', edit_product_path(@product), class: "btn btn-info btn-xs" 
+|
+=link_to 'Destroy', @product, method: :delete, data: {confirm: "Are you sure?"},  class: "btn btn-info btn-xs"
+|
+=link_to 'List Products', products_path, class: "btn btn-info btn-xs" 
